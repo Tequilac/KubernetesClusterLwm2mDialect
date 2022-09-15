@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LWM2M xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.openmobilealliance.org/tech/profiles/LWM2M-v1_1.xsd">
+    <Object ObjectType="MODefinition">
+        <Name>Kubernetes Cluster Pod</Name>
+        <Description1 />
+        <ObjectID>33627</ObjectID>
+        <ObjectURN>urn:oma:lwm2m:x:33627:1</ObjectURN>
+        <LWM2MVersion>1.1</LWM2MVersion>
+        <ObjectVersion>1.0</ObjectVersion>
+        <MultipleInstances>Multiple</MultipleInstances>
+        <Mandatory>Optional</Mandatory>
+        <Resources>
+            <Item ID="0">
+                <Name>Name</Name>
+                <Operations>R</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Mandatory</Mandatory>
+                <Type>Boolean</Type>
+                <RangeEnumeration></RangeEnumeration>
+                <Units></Units>
+                <Description><![CDATA[Name of the pod.]]></Description>
+            </Item>
+            <Item ID="1">
+                <Name>Ready containers</Name>
+                <Operations>R</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Mandatory</Mandatory>
+                <Type>Unsigned Integer</Type>
+                <RangeEnumeration></RangeEnumeration>
+                <Units></Units>
+                <Description><![CDATA[Number of ready containers.]]></Description>
+            </Item>
+            <Item ID="2">
+                <Name>Total containers</Name>
+                <Operations>R</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Mandatory</Mandatory>
+                <Type>Unsigned Integer</Type>
+                <RangeEnumeration></RangeEnumeration>
+                <Units></Units>
+                <Description><![CDATA[Number of total containers.]]></Description>
+            </Item>
+            <Item ID="3">
+                <Name>Age</Name>
+                <Operations>R</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Mandatory</Mandatory>
+                <Type>String</Type>
+                <RangeEnumeration></RangeEnumeration>
+                <Units></Units>
+                <Description><![CDATA[Age of the pod.]]></Description>
+            </Item>
+            <Item ID="4">
+                <Name>Phase</Name>
+                <Operations>R</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Mandatory</Mandatory>
+                <Type>Unsigned Integer</Type>
+                <RangeEnumeration>1..5</RangeEnumeration>
+                <Units></Units>
+                <Description><![CDATA[Current phase of the node:
+1 - Pending
+2 - Running
+3 - Succeeded
+4 - Failed
+5 - Unknown]]></Description>
+            </Item>
+            <Item ID="5">
+                <Name>Condition</Name>
+                <Operations>R</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Mandatory</Mandatory>
+                <Type>Unsigned Integer</Type>
+                <RangeEnumeration>1..5</RangeEnumeration>
+                <Units></Units>
+                <Description><![CDATA[Current condition of the node:
+1 - PodScheduled
+2 - PodHasNetwork
+3 - ContainersReady
+4 - Initialized
+5 - Ready]]></Description>
+            </Item>
+            <Item ID="6">
+                <Name>Restarts</Name>
+                <Operations>R</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Optional</Mandatory>
+                <Type>Unsigned Integer</Type>
+                <RangeEnumeration></RangeEnumeration>
+                <Units></Units>
+                <Description><![CDATA[Number of restarts of the pod.]]></Description>
+            </Item>
+            <Item ID="7">
+                <Name>IP address</Name>
+                <Operations>R</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Optional</Mandatory>
+                <Type>String</Type>
+                <RangeEnumeration></RangeEnumeration>
+                <Units></Units>
+                <Description><![CDATA[IP address of the pod.]]></Description>
+            </Item>
+            <Item ID="8">
+                <Name>Memory usage</Name>
+                <Operations>R</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Optional</Mandatory>
+                <Type>Float</Type>
+                <RangeEnumeration></RangeEnumeration>
+                <Units>MB</Units>
+                <Description><![CDATA[Pod's memory usage.]]></Description>
+            </Item>
+            <Item ID="9">
+                <Name>CPU usage</Name>
+                <Operations>R</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Optional</Mandatory>
+                <Type>Float</Type>
+                <RangeEnumeration></RangeEnumeration>
+                <Units>ms</Units>
+                <Description><![CDATA[Pod's CPU usage.]]></Description>
+            </Item>
+            <Item ID="10">
+                <Name>Node</Name>
+                <Operations>R</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Optional</Mandatory>
+                <Type>String</Type>
+                <RangeEnumeration></RangeEnumeration>
+                <Units></Units>
+                <Description><![CDATA[Name of the node on which the pod is running.]]></Description>
+            </Item>
+        </Resources>
+        <Description2 />
+    </Object>
+</LWM2M>

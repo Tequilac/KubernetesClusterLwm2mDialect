@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LWM2M xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.openmobilealliance.org/tech/profiles/LWM2M-v1_1.xsd">
+    <Object ObjectType="MODefinition">
+        <Name>Kubernetes Cluster Node</Name>
+        <Description1 />
+        <ObjectID>33626</ObjectID>
+        <ObjectURN>urn:oma:lwm2m:x:33626:1</ObjectURN>
+        <LWM2MVersion>1.1</LWM2MVersion>
+        <ObjectVersion>1.0</ObjectVersion>
+        <MultipleInstances>Multiple</MultipleInstances>
+        <Mandatory>Optional</Mandatory>
+        <Resources>
+            <Item ID="0">
+                <Name>Name</Name>
+                <Operations>R</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Mandatory</Mandatory>
+                <Type>Boolean</Type>
+                <RangeEnumeration></RangeEnumeration>
+                <Units></Units>
+                <Description><![CDATA[Name of the node.]]></Description>
+            </Item>
+            <Item ID="1">
+                <Name>Role</Name>
+                <Operations>R</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Mandatory</Mandatory>
+                <Type>Unsigned Integer</Type>
+                <RangeEnumeration>1..2</RangeEnumeration>
+                <Units></Units>
+                <Description><![CDATA[Role of the node:
+1 - master
+2 - agent]]></Description>
+            </Item>
+            <Item ID="2">
+                <Name>Age</Name>
+                <Operations>R</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Mandatory</Mandatory>
+                <Type>String</Type>
+                <RangeEnumeration></RangeEnumeration>
+                <Units></Units>
+                <Description><![CDATA[Age of the node.]]></Description>
+            </Item>
+            <Item ID="3">
+                <Name>Condition</Name>
+                <Operations>R</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Mandatory</Mandatory>
+                <Type>Unsigned Integer</Type>
+                <RangeEnumeration>1..5</RangeEnumeration>
+                <Units></Units>
+                <Description><![CDATA[Current condition of the node:
+1 - Ready
+2 - DiskPressure
+3 - MemoryPressure
+4 - PIDPressure
+5 - NetworkUnavailable]]></Description>
+            </Item>
+            <Item ID="4">
+                <Name>Last heartbeat time</Name>
+                <Operations>R</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Optional</Mandatory>
+                <Type>Time</Type>
+                <RangeEnumeration></RangeEnumeration>
+                <Units></Units>
+                <Description><![CDATA[Last heartbeat time of the cluster (in UNIX time).]]></Description>
+            </Item>
+            <Item ID="5">
+                <Name>Memory usage</Name>
+                <Operations>R</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Optional</Mandatory>
+                <Type>Float</Type>
+                <RangeEnumeration></RangeEnumeration>
+                <Units>MB</Units>
+                <Description><![CDATA[Node's memory usage.]]></Description>
+            </Item>
+            <Item ID="6">
+                <Name>CPU usage</Name>
+                <Operations>R</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Optional</Mandatory>
+                <Type>Float</Type>
+                <RangeEnumeration></RangeEnumeration>
+                <Units>ms</Units>
+                <Description><![CDATA[Node's CPU usage.]]></Description>
+            </Item>
+            <Item ID="7">
+                <Name>Number of pods</Name>
+                <Operations>R</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Optional</Mandatory>
+                <Type>Unsigned Integer</Type>
+                <RangeEnumeration></RangeEnumeration>
+                <Units></Units>
+                <Description><![CDATA[Number of pods running on the node.]]></Description>
+            </Item>
+            <Item ID="8">
+                <Name>CPU Temperature</Name>
+                <Operations>R</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Optional</Mandatory>
+                <Type>Float</Type>
+                <RangeEnumeration></RangeEnumeration>
+                <Units>K</Units>
+                <Description><![CDATA[Node's CPU temperature.]]></Description>
+            </Item>
+        </Resources>
+        <Description2 />
+    </Object>
+</LWM2M>
