@@ -1,134 +1,104 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LWM2M xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.openmobilealliance.org/tech/profiles/LWM2M-v1_1.xsd">
     <Object ObjectType="MODefinition">
-        <Name>Kubernetes Cluster Pod</Name>
+        <Name>Docker Container</Name>
         <Description1 />
-        <ObjectID>33627</ObjectID>
-        <ObjectURN>urn:oma:lwm2m:x:33627:1</ObjectURN>
+        <ObjectID>33628</ObjectID>
+        <ObjectURN>urn:oma:lwm2m:x:33628:1</ObjectURN>
         <LWM2MVersion>1.1</LWM2MVersion>
         <ObjectVersion>1.0</ObjectVersion>
         <MultipleInstances>Multiple</MultipleInstances>
         <Mandatory>Optional</Mandatory>
         <Resources>
             <Item ID="0">
-                <Name>Name</Name>
+                <Name>Container ID</Name>
                 <Operations>R</Operations>
                 <MultipleInstances>Single</MultipleInstances>
                 <Mandatory>Mandatory</Mandatory>
                 <Type>String</Type>
                 <RangeEnumeration></RangeEnumeration>
                 <Units></Units>
-                <Description><![CDATA[Name of the pod.]]></Description>
+                <Description><![CDATA[ID of the container.]]></Description>
             </Item>
             <Item ID="1">
-                <Name>Ready containers</Name>
+                <Name>Image</Name>
                 <Operations>R</Operations>
                 <MultipleInstances>Single</MultipleInstances>
                 <Mandatory>Mandatory</Mandatory>
-                <Type>Unsigned Integer</Type>
+                <Type>String</Type>
                 <RangeEnumeration></RangeEnumeration>
                 <Units></Units>
-                <Description><![CDATA[Number of ready containers.]]></Description>
+                <Description><![CDATA[Image from which the container was created.]]></Description>
             </Item>
             <Item ID="2">
-                <Name>Total containers</Name>
+                <Name>Command</Name>
                 <Operations>R</Operations>
                 <MultipleInstances>Single</MultipleInstances>
                 <Mandatory>Mandatory</Mandatory>
-                <Type>Unsigned Integer</Type>
+                <Type>String</Type>
                 <RangeEnumeration></RangeEnumeration>
                 <Units></Units>
-                <Description><![CDATA[Number of total containers.]]></Description>
+                <Description><![CDATA[Command that was executed upon the container's start.]]></Description>
             </Item>
             <Item ID="3">
-                <Name>Age</Name>
+                <Name>Created</Name>
                 <Operations>R</Operations>
                 <MultipleInstances>Single</MultipleInstances>
                 <Mandatory>Mandatory</Mandatory>
                 <Type>String</Type>
                 <RangeEnumeration></RangeEnumeration>
                 <Units></Units>
-                <Description><![CDATA[Age of the pod.]]></Description>
+                <Description><![CDATA[How long ago was the container created.]]></Description>
             </Item>
             <Item ID="4">
-                <Name>Phase</Name>
+                <Name>Status</Name>
                 <Operations>R</Operations>
                 <MultipleInstances>Single</MultipleInstances>
                 <Mandatory>Mandatory</Mandatory>
-                <Type>Unsigned Integer</Type>
-                <RangeEnumeration>1..5</RangeEnumeration>
-                <Units></Units>
-                <Description><![CDATA[Current phase of the node:
-1 - Pending
-2 - Running
-3 - Succeeded
-4 - Failed
-5 - Unknown]]></Description>
-            </Item>
-            <Item ID="5">
-                <Name>Condition</Name>
-                <Operations>R</Operations>
-                <MultipleInstances>Single</MultipleInstances>
-                <Mandatory>Mandatory</Mandatory>
-                <Type>Unsigned Integer</Type>
-                <RangeEnumeration>1..5</RangeEnumeration>
-                <Units></Units>
-                <Description><![CDATA[Current condition of the node:
-1 - PodScheduled
-2 - PodHasNetwork
-3 - ContainersReady
-4 - Initialized
-5 - Ready]]></Description>
-            </Item>
-            <Item ID="6">
-                <Name>Restarts</Name>
-                <Operations>R</Operations>
-                <MultipleInstances>Single</MultipleInstances>
-                <Mandatory>Optional</Mandatory>
-                <Type>Unsigned Integer</Type>
+                <Type>String</Type>
                 <RangeEnumeration></RangeEnumeration>
                 <Units></Units>
-                <Description><![CDATA[Number of restarts of the pod.]]></Description>
+                <Description><![CDATA[Last seen status of the pod with date of the measurement.]]></Description>
+            </Item>
+            <Item ID="5">
+                <Name>Ports</Name>
+                <Operations>R</Operations>
+                <MultipleInstances>Multiple</MultipleInstances>
+                <Mandatory>Mandatory</Mandatory>
+                <Type>String</Type>
+                <RangeEnumeration></RangeEnumeration>
+                <Units></Units>
+                <Description><![CDATA[Ports and protocols used by the container.]]></Description>
+            </Item>
+            <Item ID="6">
+                <Name>Names</Name>
+                <Operations>R</Operations>
+                <MultipleInstances>Multiple</MultipleInstances>
+                <Mandatory>Optional</Mandatory>
+                <Type>String</Type>
+                <RangeEnumeration></RangeEnumeration>
+                <Units></Units>
+                <Description><![CDATA[Names used by the container.]]></Description>
             </Item>
             <Item ID="7">
-                <Name>IP address</Name>
+                <Name>Size</Name>
                 <Operations>R</Operations>
                 <MultipleInstances>Single</MultipleInstances>
                 <Mandatory>Optional</Mandatory>
                 <Type>String</Type>
                 <RangeEnumeration></RangeEnumeration>
                 <Units></Units>
-                <Description><![CDATA[IP address of the pod.]]></Description>
+                <Description><![CDATA[The amount of data used for the writable layer of the container.]]></Description>
             </Item>
             <Item ID="8">
-                <Name>Memory usage</Name>
+                <Name>Virtual size</Name>
                 <Operations>R</Operations>
                 <MultipleInstances>Single</MultipleInstances>
                 <Mandatory>Optional</Mandatory>
-                <Type>Float</Type>
-                <RangeEnumeration></RangeEnumeration>
-                <Units>MB</Units>
-                <Description><![CDATA[Pod's memory usage.]]></Description>
-            </Item>
-            <Item ID="9">
-                <Name>CPU usage</Name>
-                <Operations>R</Operations>
-                <MultipleInstances>Single</MultipleInstances>
-                <Mandatory>Optional</Mandatory>
-                <Type>Float</Type>
-                <RangeEnumeration></RangeEnumeration>
-                <Units>ms</Units>
-                <Description><![CDATA[Pod's CPU usage.]]></Description>
-            </Item>
-            <Item ID="10">
-                <Name>Node</Name>
-                <Operations>R</Operations>
-                <MultipleInstances>Single</MultipleInstances>
-                <Mandatory>Optional</Mandatory>
-                <Type>Object Link</Type>
+                <Type>String</Type>
                 <RangeEnumeration></RangeEnumeration>
                 <Units></Units>
-                <Description><![CDATA[Link to object instance of the node on which the pod is running.]]></Description>
+                <Description><![CDATA[The amount of disk-space used for the image data used by the container and the writable layer.]]></Description>
             </Item>
         </Resources>
         <Description2 />
