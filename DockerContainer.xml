@@ -58,7 +58,7 @@
                 <Type>String</Type>
                 <RangeEnumeration></RangeEnumeration>
                 <Units></Units>
-                <Description><![CDATA[Last seen status of the pod with date of the measurement.]]></Description>
+                <Description><![CDATA[Last seen status of the container with date of the measurement.]]></Description>
             </Item>
             <Item ID="5">
                 <Name>Ports</Name>
