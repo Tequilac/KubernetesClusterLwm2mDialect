@@ -130,6 +130,16 @@
                 <Units></Units>
                 <Description><![CDATA[Link to object instance of the node on which the pod is running.]]></Description>
             </Item>
+            <Item ID="11">
+                <Name>Delete</Name>
+                <Operations>E</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Optional</Mandatory>
+                <Type></Type>
+                <RangeEnumeration></RangeEnumeration>
+                <Units></Units>
+                <Description><![CDATA[Delete the pod.]]></Description>
+            </Item>
         </Resources>
         <Description2 />
     </Object>
