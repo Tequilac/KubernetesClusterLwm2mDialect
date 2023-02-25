@@ -100,6 +100,16 @@
                 <Units></Units>
                 <Description><![CDATA[The amount of disk-space used for the image data used by the container and the writable layer.]]></Description>
             </Item>
+            <Item ID="9">
+                <Name>Stop</Name>
+                <Operations>E</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Optional</Mandatory>
+                <Type></Type>
+                <RangeEnumeration></RangeEnumeration>
+                <Units></Units>
+                <Description><![CDATA[Stop the running container.]]></Description>
+            </Item>
         </Resources>
         <Description2 />
     </Object>
