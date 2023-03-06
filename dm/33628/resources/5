@@ -1,0 +1,28 @@
+#!/usr/bin/env python3
+# -*- encoding: utf-8 -*-
+
+from fsdm import ResourceHandler, CoapError, DataType, KvStore
+
+
+class ResourceHandler_33628_5(ResourceHandler):
+    NAME = "Ports"
+    DESCRIPTION = '''\
+Ports and protocols used by the container.'''
+    DATATYPE = DataType.STRING
+    EXTERNAL_NOTIFY = False
+
+    def read(self,
+             instance_id,            # int
+             resource_instance_id):  # int for multiple resources, None otherwise
+        # TODO: print value to stdout
+        print("TODO")
+
+
+    def list(self,
+             instance_id):  # int
+        # TODO: print space-separated list of available Resource Instance IDs
+        raise CoapError.NOT_IMPLEMENTED
+
+
+if __name__ == '__main__':
+    ResourceHandler_33628_5().main()

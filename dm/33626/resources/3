@@ -1,0 +1,25 @@
+#!/usr/bin/env python3
+# -*- encoding: utf-8 -*-
+
+from fsdm import ResourceHandler, CoapError, DataType, KvStore
+
+
+class ResourceHandler_33626_3(ResourceHandler):
+    NAME = "Condition"
+    DESCRIPTION = '''\
+Current condition of the node: 1 - Ready 2 - DiskPressure 3 -
+ * MemoryPressure 4 - PIDPressure 5 - NetworkUnavailable'''
+    DATATYPE = DataType.UNSIGNED INTEGER
+    EXTERNAL_NOTIFY = False
+
+    def read(self,
+             instance_id,            # int
+             resource_instance_id):  # int for multiple resources, None otherwise
+        # TODO: print value to stdout
+        print(None)
+
+
+
+
+if __name__ == '__main__':
+    ResourceHandler_33626_3().main()
