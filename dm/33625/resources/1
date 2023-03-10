@@ -2,20 +2,23 @@
 # -*- encoding: utf-8 -*-
 
 from fsdm import ResourceHandler, CoapError, DataType, KvStore
+from kubernetes import client, config
 
 
 class ResourceHandler_33625_1(ResourceHandler):
     NAME = "Pods"
     DESCRIPTION = '''\
 Number of pods in the cluster.'''
-    DATATYPE = DataType.UNSIGNED INTEGER
+    DATATYPE = DataType.UNSIGNED_INTEGER
     EXTERNAL_NOTIFY = False
 
     def read(self,
              instance_id,            # int
              resource_instance_id):  # int for multiple resources, None otherwise
-        # TODO: print value to stdout
-        print(None)
+        config.load_kube_config()
+        v1 = client.CoreV1Api()
+        pods = v1.list_namespaced_pod('default', watch=False)
+        print(len(pods.items))
 
 
 
