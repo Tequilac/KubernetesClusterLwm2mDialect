@@ -2,7 +2,7 @@
 # -*- encoding: utf-8 -*-
 
 from fsdm import ResourceHandler, CoapError, DataType, KvStore
-
+import docker
 
 class ResourceHandler_33628_5(ResourceHandler):
     NAME = "Ports"
@@ -14,14 +14,18 @@ Ports and protocols used by the container.'''
     def read(self,
              instance_id,            # int
              resource_instance_id):  # int for multiple resources, None otherwise
-        # TODO: print value to stdout
-        print("TODO")
+        client = docker.from_env()
+        container = client.containers.list()[instance_id]
+        print(list(container.attrs['Config']['ExposedPorts'].keys())[resource_instance_id])
 
 
     def list(self,
              instance_id):  # int
-        # TODO: print space-separated list of available Resource Instance IDs
-        raise CoapError.NOT_IMPLEMENTED
+        client = docker.from_env()
+        container = client.containers.list()[instance_id]
+        ports = list(container.attrs['Config']['ExposedPorts'].keys())
+        nums = [str(i) for i in range(len(ports))]
+        print(" ".join(nums))
 
 
 if __name__ == '__main__':

@@ -2,7 +2,7 @@
 # -*- encoding: utf-8 -*-
 
 from fsdm import ResourceHandler, CoapError, DataType, KvStore
-
+import docker
 
 class ResourceHandler_33628_4(ResourceHandler):
     NAME = "Status"
@@ -14,8 +14,9 @@ Last seen status of the container with date of the measurement.'''
     def read(self,
              instance_id,            # int
              resource_instance_id):  # int for multiple resources, None otherwise
-        # TODO: print value to stdout
-        print("TODO")
+        client = docker.from_env()
+        container = client.containers.list()[instance_id]
+        print(container.attrs['State']['Status'])
 
 
 

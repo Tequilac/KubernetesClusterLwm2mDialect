@@ -2,7 +2,7 @@
 # -*- encoding: utf-8 -*-
 
 from fsdm import InstancesHandler, CoapError
-
+from kubernetes import client, config
 
 class InstancesHandler_33626(InstancesHandler):
     EXTERNAL_NOTIFY = False
@@ -19,8 +19,11 @@ class InstancesHandler_33626(InstancesHandler):
         raise CoapError.NOT_IMPLEMENTED
 
     def list(self):
-        # TODO: print space-separated list of existing instances to stdout
-        print("0")
+        config.load_kube_config()
+        v1 = client.CoreV1Api()
+        nodes = v1.list_node(watch=False)
+        nums = [str(i) for i in range(len(nodes.items))]
+        print(" ".join(nums))
 
 
 if __name__ == '__main__':

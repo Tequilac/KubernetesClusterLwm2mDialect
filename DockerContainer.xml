@@ -91,16 +91,6 @@
                 <Description><![CDATA[The amount of data used for the writable layer of the container.]]></Description>
             </Item>
             <Item ID="8">
-                <Name>Virtual size</Name>
-                <Operations>R</Operations>
-                <MultipleInstances>Single</MultipleInstances>
-                <Mandatory>Optional</Mandatory>
-                <Type>String</Type>
-                <RangeEnumeration></RangeEnumeration>
-                <Units></Units>
-                <Description><![CDATA[The amount of disk-space used for the image data used by the container and the writable layer.]]></Description>
-            </Item>
-            <Item ID="9">
                 <Name>Stop</Name>
                 <Operations>E</Operations>
                 <MultipleInstances>Single</MultipleInstances>

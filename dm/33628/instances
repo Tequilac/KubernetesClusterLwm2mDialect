@@ -2,7 +2,7 @@
 # -*- encoding: utf-8 -*-
 
 from fsdm import InstancesHandler, CoapError
-
+import docker
 
 class InstancesHandler_33628(InstancesHandler):
     EXTERNAL_NOTIFY = False
@@ -19,8 +19,10 @@ class InstancesHandler_33628(InstancesHandler):
         raise CoapError.NOT_IMPLEMENTED
 
     def list(self):
-        # TODO: print space-separated list of existing instances to stdout
-        print("0")
+        client = docker.from_env()
+        containers = client.containers.list()
+        nums = [str(i) for i in range(len(containers))]
+        print(" ".join(nums))
 
 
 if __name__ == '__main__':

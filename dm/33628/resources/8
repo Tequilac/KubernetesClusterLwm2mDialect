@@ -2,22 +2,19 @@
 # -*- encoding: utf-8 -*-
 
 from fsdm import ResourceHandler, CoapError, DataType, KvStore
-
+import docker
 
 class ResourceHandler_33628_8(ResourceHandler):
-    NAME = "Virtual size"
+    NAME = "Stop"
     DESCRIPTION = '''\
-The amount of disk-space used for the image data used by the container
- * and the writable layer.'''
-    DATATYPE = DataType.STRING
-    EXTERNAL_NOTIFY = False
+Stop the running container.'''
 
-    def read(self,
-             instance_id,            # int
-             resource_instance_id):  # int for multiple resources, None otherwise
-        # TODO: print value to stdout
-        print("TODO")
-
+    def execute(self,
+                instance_id,  # int
+                args):        # int -> (str or None)
+        client = docker.from_env()
+        container = client.containers.list()[instance_id]
+        container.stop()
 
 
 
