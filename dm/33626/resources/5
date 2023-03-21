@@ -2,12 +2,12 @@
 # -*- encoding: utf-8 -*-
 
 from fsdm import ResourceHandler, CoapError, DataType, KvStore
-
+from kubernetes import client, config
 
 class ResourceHandler_33626_5(ResourceHandler):
-    NAME = "Memory usage"
+    NAME = "CPU usage"
     DESCRIPTION = '''\
-Node's memory usage.'''
+Node's CPU usage.'''
     DATATYPE = DataType.FLOAT
     EXTERNAL_NOTIFY = False
 

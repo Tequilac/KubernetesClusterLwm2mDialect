@@ -2,20 +2,20 @@
 # -*- encoding: utf-8 -*-
 
 from fsdm import ResourceHandler, CoapError, DataType, KvStore
-
+from kubernetes import client, config
 
 class ResourceHandler_33626_4(ResourceHandler):
-    NAME = "Last heartbeat time"
+    NAME = "Memory usage"
     DESCRIPTION = '''\
-Last heartbeat time of the cluster (in UNIX time).'''
-    DATATYPE = DataType.TIME
+Node's memory usage.'''
+    DATATYPE = DataType.FLOAT
     EXTERNAL_NOTIFY = False
 
     def read(self,
              instance_id,            # int
              resource_instance_id):  # int for multiple resources, None otherwise
         # TODO: print value to stdout
-        print(0)
+        print(0.0)
 
 
 

@@ -2,21 +2,35 @@
 # -*- encoding: utf-8 -*-
 
 from fsdm import ResourceHandler, CoapError, DataType, KvStore
-
+from kubernetes import client, config
 
 class ResourceHandler_33626_3(ResourceHandler):
     NAME = "Condition"
     DESCRIPTION = '''\
 Current condition of the node: 1 - Ready 2 - DiskPressure 3 -
  * MemoryPressure 4 - PIDPressure 5 - NetworkUnavailable'''
-    DATATYPE = DataType.UNSIGNED INTEGER
+    DATATYPE = DataType.UNSIGNED_INTEGER
     EXTERNAL_NOTIFY = False
 
     def read(self,
              instance_id,            # int
              resource_instance_id):  # int for multiple resources, None otherwise
-        # TODO: print value to stdout
-        print(None)
+        cond_nums = {
+            'Ready': 1,
+            'DiskPressure': 2,
+            'MemoryPressure': 3,
+            'PIDPressure': 4,
+            'NetworkUnavailable': 5,
+        }
+
+        config.load_kube_config()
+        v1 = client.CoreV1Api()
+        nodes = v1.list_node(watch=False)
+        cond = 0
+        for condition in nodes.items[instance_id].status.conditions:
+            if condition.status == 'True':
+                cond = cond_nums[condition.type]
+        print(cond)
 
 
 

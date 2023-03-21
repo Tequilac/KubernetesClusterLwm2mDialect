@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 # -*- encoding: utf-8 -*-
+from datetime import datetime
 
 from fsdm import ResourceHandler, CoapError, DataType, KvStore
-
+from kubernetes import client, config
 
 class ResourceHandler_33626_2(ResourceHandler):
     NAME = "Age"
@@ -14,8 +15,12 @@ Age of the node.'''
     def read(self,
              instance_id,            # int
              resource_instance_id):  # int for multiple resources, None otherwise
-        # TODO: print value to stdout
-        print("TODO")
+        config.load_kube_config()
+        v1 = client.CoreV1Api()
+        nodes = v1.list_node(watch=False)
+        timestamp = nodes.items[instance_id].metadata.creation_timestamp
+        date = datetime.strptime(timestamp, '%Y-%m-%dT%H:%M:%S.%f')
+        print(str(date - datetime.now()))
 
 
 

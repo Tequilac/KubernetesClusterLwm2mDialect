@@ -2,7 +2,7 @@
 # -*- encoding: utf-8 -*-
 
 from fsdm import ResourceHandler, CoapError, DataType, KvStore
-
+from kubernetes import client, config
 
 class ResourceHandler_33626_0(ResourceHandler):
     NAME = "Name"
@@ -14,8 +14,10 @@ Name of the node.'''
     def read(self,
              instance_id,            # int
              resource_instance_id):  # int for multiple resources, None otherwise
-        # TODO: print value to stdout
-        print("TODO")
+        config.load_kube_config()
+        v1 = client.CoreV1Api()
+        nodes = v1.list_node(watch=False)
+        print(nodes.items[instance_id].metadata.name)
 
 
 

@@ -58,16 +58,6 @@
 5 - NetworkUnavailable]]></Description>
             </Item>
             <Item ID="4">
-                <Name>Last heartbeat time</Name>
-                <Operations>R</Operations>
-                <MultipleInstances>Single</MultipleInstances>
-                <Mandatory>Optional</Mandatory>
-                <Type>Time</Type>
-                <RangeEnumeration></RangeEnumeration>
-                <Units></Units>
-                <Description><![CDATA[Last heartbeat time of the cluster (in UNIX time).]]></Description>
-            </Item>
-            <Item ID="5">
                 <Name>Memory usage</Name>
                 <Operations>R</Operations>
                 <MultipleInstances>Single</MultipleInstances>
@@ -77,7 +67,7 @@
                 <Units>MB</Units>
                 <Description><![CDATA[Node's memory usage.]]></Description>
             </Item>
-            <Item ID="6">
+            <Item ID="5">
                 <Name>CPU usage</Name>
                 <Operations>R</Operations>
                 <MultipleInstances>Single</MultipleInstances>
@@ -87,7 +77,7 @@
                 <Units>ms</Units>
                 <Description><![CDATA[Node's CPU usage.]]></Description>
             </Item>
-            <Item ID="7">
+            <Item ID="6">
                 <Name>Number of pods</Name>
                 <Operations>R</Operations>
                 <MultipleInstances>Single</MultipleInstances>
@@ -97,7 +87,7 @@
                 <Units></Units>
                 <Description><![CDATA[Number of pods running on the node.]]></Description>
             </Item>
-            <Item ID="8">
+            <Item ID="7">
                 <Name>CPU Temperature</Name>
                 <Operations>R</Operations>
                 <MultipleInstances>Single</MultipleInstances>
