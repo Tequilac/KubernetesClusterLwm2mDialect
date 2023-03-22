@@ -58,7 +58,7 @@
                 <Type>Unsigned Integer</Type>
                 <RangeEnumeration>1..5</RangeEnumeration>
                 <Units></Units>
-                <Description><![CDATA[Current phase of the node:
+                <Description><![CDATA[Current phase of the pod:
 1 - Pending
 2 - Running
 3 - Succeeded
@@ -73,7 +73,7 @@
                 <Type>Unsigned Integer</Type>
                 <RangeEnumeration>1..5</RangeEnumeration>
                 <Units></Units>
-                <Description><![CDATA[Current condition of the node:
+                <Description><![CDATA[Current condition of the pod:
 1 - PodScheduled
 2 - PodHasNetwork
 3 - ContainersReady

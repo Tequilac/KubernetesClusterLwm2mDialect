@@ -3,6 +3,8 @@
 
 from fsdm import ResourceHandler, CoapError, DataType, KvStore
 from kubernetes import client, config
+from prometheus_api_client import PrometheusConnect
+import os
 
 class ResourceHandler_33626_7(ResourceHandler):
     NAME = "CPU Temperature"
@@ -14,8 +16,14 @@ Node's CPU temperature.'''
     def read(self,
              instance_id,            # int
              resource_instance_id):  # int for multiple resources, None otherwise
-        # TODO: print value to stdout
-        print(0.0)
+        config.load_kube_config()
+        v1 = client.CoreV1Api()
+        nodes = v1.list_node(watch=False)
+        name = nodes.items[instance_id].metadata.name
+        prom = PrometheusConnect(url=os.getenv('PROM_URL'), disable_ssl=True)
+        label_config = {'instance': name}
+        metric = prom.get_current_metric_value(metric_name='node_hwmon_temp_celsius', label_config=label_config)
+        print(metric[0].value)
 
 
 

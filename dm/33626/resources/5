@@ -14,8 +14,12 @@ Node's CPU usage.'''
     def read(self,
              instance_id,            # int
              resource_instance_id):  # int for multiple resources, None otherwise
-        # TODO: print value to stdout
-        print(0.0)
+        config.load_kube_config()
+        v1 = client.CoreV1Api()
+        node = v1.list_node(watch=False).items[instance_id]
+        allocatable = node.status.allocatable
+        capacity = node.status.capacity
+        print(int(capacity['cpu']) * 1000 - int(allocatable['cpu'].split('m')[0]))
 
 
 
