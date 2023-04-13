@@ -16,17 +16,20 @@ Pod's memory usage.'''
     def read(self,
              instance_id,            # int
              resource_instance_id):  # int for multiple resources, None otherwise
-        config.load_kube_config()
-        v1 = client.CoreV1Api()
-        pods = v1.list_namespaced_pod(namespace="default", watch=False)
-        prom = PrometheusConnect(url=os.getenv('PROM_URL'), disable_ssl=True)
-        label_config = {'pod': pods.items[instance_id].metadata.name}
-        metric = prom.get_current_metric_value(
-            metric_name='container_memory_usage_bytes',
-            label_config=label_config,
-        )
-        print(metric[0].value)
-
+        prometheus_url = os.getenv('PROM_URL')
+        if prometheus_url:
+            config.load_kube_config()
+            v1 = client.CoreV1Api()
+            pods = v1.list_namespaced_pod(namespace="default", watch=False)
+            prom = PrometheusConnect(url=prometheus_url, disable_ssl=True)
+            label_config = {'pod': pods.items[instance_id].metadata.name}
+            metric = prom.get_current_metric_value(
+                metric_name='container_memory_usage_bytes',
+                label_config=label_config,
+            )
+            print(metric[0].value)
+        else:
+            print(0.0)
 
 
 

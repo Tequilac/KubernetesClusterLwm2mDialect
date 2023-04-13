@@ -16,15 +16,18 @@ Node's CPU temperature.'''
     def read(self,
              instance_id,            # int
              resource_instance_id):  # int for multiple resources, None otherwise
-        config.load_kube_config()
-        v1 = client.CoreV1Api()
-        nodes = v1.list_node(watch=False)
-        name = nodes.items[instance_id].metadata.name
-        prom = PrometheusConnect(url=os.getenv('PROM_URL'), disable_ssl=True)
-        label_config = {'instance': name}
-        metric = prom.get_current_metric_value(metric_name='node_hwmon_temp_celsius', label_config=label_config)
-        print(metric[0].value)
-
+        prometheus_url = os.getenv('PROM_URL')
+        if prometheus_url:
+            config.load_kube_config()
+            v1 = client.CoreV1Api()
+            nodes = v1.list_node(watch=False)
+            name = nodes.items[instance_id].metadata.name
+            prom = PrometheusConnect(url=os.getenv('PROM_URL'), disable_ssl=True)
+            label_config = {'instance': name}
+            metric = prom.get_current_metric_value(metric_name='node_hwmon_temp_celsius', label_config=label_config)
+            print(metric[0].value)
+        else:
+            print(0.0)
 
 
 
