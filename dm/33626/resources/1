@@ -8,7 +8,7 @@ class ResourceHandler_33626_1(ResourceHandler):
     NAME = "Role"
     DESCRIPTION = '''\
 Role of the node: 1 - master 2 - agent'''
-    DATATYPE = DataType.UNSIGNED_INTEGER
+    DATATYPE = DataType.INTEGER
     EXTERNAL_NOTIFY = False
 
     def read(self,

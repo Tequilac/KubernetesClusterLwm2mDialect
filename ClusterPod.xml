@@ -25,7 +25,7 @@
                 <Operations>R</Operations>
                 <MultipleInstances>Single</MultipleInstances>
                 <Mandatory>Mandatory</Mandatory>
-                <Type>Unsigned Integer</Type>
+                <Type>Integer</Type>
                 <RangeEnumeration></RangeEnumeration>
                 <Units></Units>
                 <Description><![CDATA[Number of ready containers.]]></Description>
@@ -35,7 +35,7 @@
                 <Operations>R</Operations>
                 <MultipleInstances>Single</MultipleInstances>
                 <Mandatory>Mandatory</Mandatory>
-                <Type>Unsigned Integer</Type>
+                <Type>Integer</Type>
                 <RangeEnumeration></RangeEnumeration>
                 <Units></Units>
                 <Description><![CDATA[Number of total containers.]]></Description>
@@ -55,7 +55,7 @@
                 <Operations>R</Operations>
                 <MultipleInstances>Single</MultipleInstances>
                 <Mandatory>Mandatory</Mandatory>
-                <Type>Unsigned Integer</Type>
+                <Type>Integer</Type>
                 <RangeEnumeration>1..5</RangeEnumeration>
                 <Units></Units>
                 <Description><![CDATA[Current phase of the pod:
@@ -70,7 +70,7 @@
                 <Operations>R</Operations>
                 <MultipleInstances>Single</MultipleInstances>
                 <Mandatory>Mandatory</Mandatory>
-                <Type>Unsigned Integer</Type>
+                <Type>Integer</Type>
                 <RangeEnumeration>1..5</RangeEnumeration>
                 <Units></Units>
                 <Description><![CDATA[Current condition of the pod:
@@ -85,7 +85,7 @@
                 <Operations>R</Operations>
                 <MultipleInstances>Single</MultipleInstances>
                 <Mandatory>Optional</Mandatory>
-                <Type>Unsigned Integer</Type>
+                <Type>Integer</Type>
                 <RangeEnumeration></RangeEnumeration>
                 <Units></Units>
                 <Description><![CDATA[Number of restarts of the pod.]]></Description>

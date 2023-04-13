@@ -9,7 +9,7 @@ class ResourceHandler_33626_3(ResourceHandler):
     DESCRIPTION = '''\
 Current condition of the node: 1 - Ready 2 - DiskPressure 3 -
  * MemoryPressure 4 - PIDPressure 5 - NetworkUnavailable'''
-    DATATYPE = DataType.UNSIGNED_INTEGER
+    DATATYPE = DataType.INTEGER
     EXTERNAL_NOTIFY = False
 
     def read(self,

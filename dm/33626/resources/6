@@ -8,7 +8,7 @@ class ResourceHandler_33626_6(ResourceHandler):
     NAME = "Number of pods"
     DESCRIPTION = '''\
 Number of pods running on the node.'''
-    DATATYPE = DataType.UNSIGNED_INTEGER
+    DATATYPE = DataType.INTEGER
     EXTERNAL_NOTIFY = False
 
     def read(self,

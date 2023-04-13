@@ -15,7 +15,7 @@
                 <Operations>R</Operations>
                 <MultipleInstances>Single</MultipleInstances>
                 <Mandatory>Mandatory</Mandatory>
-                <Type>Unsigned Integer</Type>
+                <Type>Integer</Type>
                 <RangeEnumeration></RangeEnumeration>
                 <Units></Units>
                 <Description><![CDATA[Number of nodes in the cluster.]]></Description>
@@ -25,7 +25,7 @@
                 <Operations>R</Operations>
                 <MultipleInstances>Single</MultipleInstances>
                 <Mandatory>Mandatory</Mandatory>
-                <Type>Unsigned Integer</Type>
+                <Type>Integer</Type>
                 <RangeEnumeration></RangeEnumeration>
                 <Units></Units>
                 <Description><![CDATA[Number of pods in the cluster.]]></Description>

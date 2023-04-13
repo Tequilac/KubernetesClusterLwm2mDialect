@@ -9,7 +9,7 @@ class ResourceHandler_33625_0(ResourceHandler):
     NAME = "Nodes"
     DESCRIPTION = '''\
 Number of nodes in the cluster.'''
-    DATATYPE = DataType.UNSIGNED_INTEGER
+    DATATYPE = DataType.INTEGER
     EXTERNAL_NOTIFY = False
 
     def read(self,

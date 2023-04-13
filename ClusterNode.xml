@@ -25,7 +25,7 @@
                 <Operations>R</Operations>
                 <MultipleInstances>Single</MultipleInstances>
                 <Mandatory>Mandatory</Mandatory>
-                <Type>Unsigned Integer</Type>
+                <Type>Integer</Type>
                 <RangeEnumeration>1..2</RangeEnumeration>
                 <Units></Units>
                 <Description><![CDATA[Role of the node:
@@ -47,7 +47,7 @@
                 <Operations>R</Operations>
                 <MultipleInstances>Single</MultipleInstances>
                 <Mandatory>Mandatory</Mandatory>
-                <Type>Unsigned Integer</Type>
+                <Type>Integer</Type>
                 <RangeEnumeration>1..5</RangeEnumeration>
                 <Units></Units>
                 <Description><![CDATA[Current condition of the node:
@@ -82,7 +82,7 @@
                 <Operations>R</Operations>
                 <MultipleInstances>Single</MultipleInstances>
                 <Mandatory>Optional</Mandatory>
-                <Type>Unsigned Integer</Type>
+                <Type>Integer</Type>
                 <RangeEnumeration></RangeEnumeration>
                 <Units></Units>
                 <Description><![CDATA[Number of pods running on the node.]]></Description>
