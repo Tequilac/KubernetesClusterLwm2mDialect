@@ -3,7 +3,7 @@
 
 from fsdm import ResourceHandler, CoapError, DataType, KvStore
 from kubernetes import client, config
-from prometheus_api_client import PrometheusConnect
+#from prometheus_api_client import PrometheusConnect
 import os
 
 class ResourceHandler_33626_7(ResourceHandler):
