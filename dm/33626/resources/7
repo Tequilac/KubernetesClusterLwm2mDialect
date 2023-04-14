@@ -22,7 +22,7 @@ Node's CPU temperature.'''
             v1 = client.CoreV1Api()
             nodes = v1.list_node(watch=False)
             name = nodes.items[instance_id].metadata.name
-            prom = PrometheusConnect(url=os.getenv('PROM_URL'), disable_ssl=True)
+            prom = PrometheusConnect(url=prometheus_url, disable_ssl=True)
             label_config = {'instance': name}
             metric = prom.get_current_metric_value(metric_name='node_hwmon_temp_celsius', label_config=label_config)
             print(metric[0].value)
