@@ -94,7 +94,7 @@
                 <Mandatory>Optional</Mandatory>
                 <Type>Float</Type>
                 <RangeEnumeration></RangeEnumeration>
-                <Units>K</Units>
+                <Units>°C</Units>
                 <Description><![CDATA[Node's CPU temperature.]]></Description>
             </Item>
         </Resources>

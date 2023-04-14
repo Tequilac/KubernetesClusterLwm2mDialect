@@ -19,7 +19,7 @@ Number of pods running on the node.'''
         nodes = v1.list_node(watch=False)
         name = nodes.items[instance_id].metadata.name
         field_selector = 'spec.nodeName=' + name
-        pods = v1.list_namespaced_pod(watch=False, field_selector=field_selector)
+        pods = v1.list_namespaced_pod(watch=False, namespace='default', field_selector=field_selector)
         print(len(pods.items))
 
 
