@@ -125,10 +125,10 @@
                 <Operations>R</Operations>
                 <MultipleInstances>Single</MultipleInstances>
                 <Mandatory>Optional</Mandatory>
-                <Type>Object Link</Type>
+                <Type>String</Type>
                 <RangeEnumeration></RangeEnumeration>
                 <Units></Units>
-                <Description><![CDATA[Link to object instance of the node on which the pod is running.]]></Description>
+                <Description><![CDATA[Node on which the pod is running.]]></Description>
             </Item>
             <Item ID="11">
                 <Name>Delete</Name>

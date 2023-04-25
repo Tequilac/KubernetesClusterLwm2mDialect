@@ -19,7 +19,7 @@ Age of the pod.'''
         v1 = client.CoreV1Api()
         pods = v1.list_namespaced_pod(namespace="default", watch=False)
         timestamp = pods.items[instance_id].status.start_time
-        print(str(timestamp - datetime.now(timezone.utc)))
+        print(str(datetime.now(timezone.utc) - timestamp))
 
 
 
