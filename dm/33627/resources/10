@@ -18,7 +18,7 @@ Link to object instance of the node on which the pod is running.'''
         v1 = client.CoreV1Api()
         pods = v1.list_namespaced_pod(namespace="default", watch=False)
         nodes = v1.list_node(watch=False).items
-        node_names = [node.metadata.names for node in nodes]
+        node_names = [node.metadata.name for node in nodes]
         idx = node_names.index(pods.items[instance_id].spec.node_name)
         print(f'/33626/{idx}')
 
