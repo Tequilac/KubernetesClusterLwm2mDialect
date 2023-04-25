@@ -17,7 +17,7 @@ Node's CPU usage.'''
         config.load_kube_config()
         api = client.CustomObjectsApi()
         nodes_stats = api.list_cluster_custom_object("metrics.k8s.io", "v1beta1", "nodes")
-        cpu_usage = int(nodes_stats['items'][instance_id]['usage']['cpu'].split('n')[0]) * 1000
+        cpu_usage = int(nodes_stats['items'][instance_id]['usage']['cpu'].split('n')[0]) / 1000000
         print(cpu_usage)
 
 
