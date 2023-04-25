@@ -15,11 +15,10 @@ Node's memory usage.'''
              instance_id,            # int
              resource_instance_id):  # int for multiple resources, None otherwise
         config.load_kube_config()
-        v1 = client.CoreV1Api()
-        node = v1.list_node(watch=False).items[instance_id]
-        allocatable = node.status.allocatable
-        capacity = node.status.capacity
-        print(int(capacity['memory'].split('Ki')[0]) - int(allocatable['memory'].split('Ki')[0]))
+        api = client.CustomObjectsApi()
+        nodes_stats = api.list_cluster_custom_object("metrics.k8s.io", "v1beta1", "nodes")
+        memory_usage = int(nodes_stats['items'][instance_id]['usage']['memory'].split('Ki')[0]) / 1024
+        print(memory_usage)
 
 
 

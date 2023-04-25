@@ -19,7 +19,7 @@ Age of the node.'''
         v1 = client.CoreV1Api()
         nodes = v1.list_node(watch=False)
         timestamp = nodes.items[instance_id].metadata.creation_timestamp
-        print(str(timestamp - datetime.now(timezone.utc)))
+        print(str(datetime.now(timezone.utc) - timestamp))
 
 
 
