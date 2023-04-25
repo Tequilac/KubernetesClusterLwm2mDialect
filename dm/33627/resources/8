@@ -19,7 +19,7 @@ Pod's memory usage.'''
         pods = v1.list_namespaced_pod(namespace="default", watch=False)
         api = client.CustomObjectsApi()
         pods_stats = api.list_cluster_custom_object("metrics.k8s.io", "v1beta1", "pods")
-        stats = list(filter(lambda x: x['metadata']['name'] == pods[instance_id].metadata.name, pods_stats['items']))[0]
+        stats = list(filter(lambda x: x['metadata']['name'] == pods.items[instance_id].metadata.name, pods_stats['items']))[0]
         memory_usage = 0
         for container in stats['containers']:
             memory_usage += int(container['usage']['memory'].split('Ki')[0]) / 1024
